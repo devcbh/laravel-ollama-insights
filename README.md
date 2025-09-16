@@ -1,9 +1,9 @@
 ```markdown
 # Laravel Ollama Insights
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/your-vendor/laravel-ollama-insights.svg?style=flat-square)](https://packagist.org/packages/your-vendor/laravel-ollama-insights)
-[![Total Downloads](https://img.shields.io/packagist/dt/your-vendor/laravel-ollama-insights.svg?style=flat-square)](https://packagist.org/packages/your-vendor/laravel-ollama-insights)
-[![License](https://img.shields.io/packagist/l/your-vendor/laravel-ollama-insights.svg?style=flat-square)](https://packagist.org/packages/your-vendor/laravel-ollama-insights)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/devcbh/laravel-ollama-insights.svg?style=flat-square)](https://packagist.org/packages/devcbh/laravel-ollama-insights)
+[![Total Downloads](https://img.shields.io/packagist/dt/devcbh/laravel-ollama-insights.svg?style=flat-square)](https://packagist.org/packages/devcbh/laravel-ollama-insights)
+[![License](https://img.shields.io/packagist/l/devcbh/laravel-ollama-insights.svg?style=flat-square)](https://packagist.org/packages/devcbh/laravel-ollama-insights)
 
 A powerful Laravel package that seamlessly integrates Ollama's AI capabilities into your application for generating intelligent insights, data analysis, and predictive modeling.
 
@@ -20,20 +20,21 @@ A powerful Laravel package that seamlessly integrates Ollama's AI capabilities i
 ## 🚀 Quick Start
 
 ### Installation
-```
-bash
-composer require your-vendor/laravel-ollama-insights
+
+```bash
+composer require devcbh/laravel-ollama-insights
 ```
 ### Publish Configuration
+
+```bash
+php artisan vendor:publish --provider="Devcbh\\OllamaInsights\\OllamaInsightsServiceProvider" --tag="config"
 ```
-bash
-php artisan vendor:publish --provider="YourVendor\\OllamaInsights\\OllamaInsightsServiceProvider" --tag="config"
-```
+
 ### Environment Setup
 
 Add to your `.env` file:
-```
-env
+
+```env
 OLLAMA_BASE_URL=http://localhost:11434
 OLLAMA_MODEL=llama2
 OLLAMA_TIMEOUT=30
@@ -41,9 +42,9 @@ OLLAMA_TIMEOUT=30
 ## 📖 Usage
 
 ### Basic Facade Usage
-```
-php
-use YourVendor\OllamaInsights\Facades\OllamaInsights;
+
+```php
+use Devcbh\OllamaInsights\Facades\OllamaInsights;
 
 $salesData = [
 'q1' => 15000,
@@ -54,9 +55,10 @@ $salesData = [
 
 $insight = OllamaInsights::generateInsight('data_analysis', $salesData);
 ```
+
 ### Artisan Commands
-```
-bash
+
+```bash
 # Generate sales trend analysis
 php artisan ollama:insight trend_analysis --data='{"sales":[100,150,200,250,300]}'
 
@@ -66,6 +68,7 @@ php artisan ollama:insight prediction --data='{"growth":[5,8,12,15]}' --model=ll
 # From JSON file
 php artisan ollama:insight summary --file=storage/data/user_activity.json
 ```
+
 ## 🎯 Available Templates
 
 | Template | Description | Example Use Case |
@@ -78,8 +81,7 @@ php artisan ollama:insight summary --file=storage/data/user_activity.json
 ## ⚙️ Configuration
 
 The package configuration (`config/ollama-insights.php`) includes:
-```
-php
+```php
 return [
 'base_url' => env('OLLAMA_BASE_URL', 'http://localhost:11434'),
 'model' => env('OLLAMA_MODEL', 'llama2'),
@@ -96,18 +98,16 @@ return [
 ## 🔧 API Methods
 
 ### Generate Completion
-```
-php
+
+```php
 OllamaInsights::generateCompletion(string $prompt, ?string $model = null): ?string
 ```
 ### Generate Insight
-```
-php
+```php
 OllamaInsights::generateInsight(string $templateKey, array $data, ?string $model = null): ?string
 ```
 ### List Models
-```
-php
+```php
 OllamaInsights::listModels(): array
 
 ## 📋 Prerequisites
@@ -135,8 +135,7 @@ OllamaInsights::listModels(): array
 ### Custom Templates
 
 Add custom templates in your configuration:
-```
-php
+```php
 'templates' => [
     'sentiment_analysis' => 'Analyze sentiment in this text: {data}',
     'code_review' => 'Review this code for improvements: {data}',
@@ -144,8 +143,7 @@ php
 ],
 ```
 ### Custom Prompt Generation
-```
-php
+```php
 $customPrompt = "Analyze this e-commerce data and suggest marketing strategies: ";
 $data = json_encode($ecommerceData);
 
@@ -175,8 +173,7 @@ $response = OllamaInsights::generateCompletion($customPrompt . $data, 'mistral')
 ### Debug Mode
 
 Check Laravel logs for detailed error information:
-```
-bash
+```bash
 tail -f storage/logs/laravel.log
 ```
 ## 🤝 Contributing
@@ -199,7 +196,7 @@ This package is open-sourced software licensed under the [MIT license](https://o
 
 ## 🏆 Credits
 
-- [Your Name](https://github.com/devcbh)
+- Christian Villegas (https://github.com/devcbh)
 
 ## 🔗 Links
 
