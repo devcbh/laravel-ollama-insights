@@ -1,0 +1,27 @@
+{
+  "name": "devcbh/laravel-ollama-insights",
+  "description": "Laravel package for AI insights using Ollama",
+  "type": "library",
+  "version": "1.0.0",
+  "require": {
+    "php": "^8.1",
+    "illuminate/support": "^10.0|^11.0",
+    "guzzlehttp/guzzle": "^7.0"
+  },
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "Devcbh\\OllamaInsights\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Devcbh\\OllamaInsights\\OllamaInsightsServiceProvider"
+      ],
+      "aliases": {
+        "OllamaInsights": "Devcbh\\OllamaInsights\\Facades\\OllamaInsights"
+      }
+    }
+  }
+}
