@@ -30,7 +30,8 @@ class OllamaInsightsServiceProvider extends ServiceProvider
             return new OllamaService(
                 config('ollama-insights.base_url'),
                 config('ollama-insights.timeout'),
-                config('ollama-insights.model')
+                config('ollama-insights.model'),
+                config('ollama-insights.api_key')
             );
         });
     }
