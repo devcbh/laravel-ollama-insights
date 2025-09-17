@@ -39,6 +39,17 @@ OLLAMA_BASE_URL=http://localhost:11434
 OLLAMA_MODEL=llama2
 OLLAMA_TIMEOUT=30
 ```
+
+If you are using Ollama Turbo:
+Add to your `.env` file:
+
+```env
+OLLAMA_BASE_URL=http://localhost:11434
+OLLAMA_MODEL=llama2
+OLLAMA_TIMEOUT=30
+OLLAMA_API_KEY=API_KEY
+```
+
 ## 📖 Usage
 
 ### Basic Facade Usage

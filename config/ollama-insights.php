@@ -39,7 +39,7 @@ return [
     | Timeout in seconds for API requests to Ollama.
     |
     */
-    'api_key' => env('OLLAMA_API_KEY', "12345"),
+    'api_key' => env('OLLAMA_API_KEY'),
 
     /*
     |--------------------------------------------------------------------------
